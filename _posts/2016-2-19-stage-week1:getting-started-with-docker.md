@@ -12,13 +12,13 @@ Since Rome wasn't built in a day, we would learn this technology step-by-step, s
 
 
 
-## <strong>1. Setting up Docker on Fedora 23</strong>
+### <strong>1. Setting up Docker on Fedora 23</strong>
 
 The first step in this process was to setup Docker locally on our machine.  
 In our case this was our laptop with Fedora 23 as OS.  
 Basically we needed two parts, the <strong>docker engine</strong> and the <strong>docker machine</strong>.  
 
-### <strong>Docker engine:</strong>
+## <strong>Docker engine:</strong>
 
 The docker engine is a client-server application consisting of <strong>three elements:</strong>
 
@@ -37,16 +37,17 @@ We installed this very easily by using the <strong>dnf package manager</strong>.
 
 #### <strong>1. Make sure all of your packages are up-to-date</strong>
 
-```bash
+```
 $ sudo dnf update
 ```
 <br />
 
+
 #### <strong>2. Add the yum repo</strong>
 
-```bash
-$ sudo tee /etc/yum.repos.d/docker.repo <<-‘EOF’
-[dockerrepo]
+```
+$ sudo tee /etc/yum.repos.d/docker.repo <<-‘EOF’ 
+[dockerrepo] 
 name=Docker Repository 
 baseurl=https://yum.dockerproject.org/repo/main/fedora/$releasever/ 
 enabled=1 
@@ -56,18 +57,30 @@ EOF
 ```
 <br />
 
+
 #### <strong>3. Install the Docker package</strong>
 
-```bash
+```
 $ sudo dnf install docker-engine
 ```
 <br />
 
+
 #### <strong>4. Start the Docker daemon</strong>
 
-```bash
+```
 $ sudo systemctl start docker
 ```  
-  
 <br />
+
+
 If this works without resulting in any errors, then you’re most likely good to go. But to make sure you can always verify your installation by deploying a test image in a container.
+
+
+## <strong>Docker machine:</strong>
+
+“Docker Machine is a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with `docker-machine` commands.”
+
+With docker machine, it’s possible to deploy multiple hosts, each running a docker engine, a.k.a. Dockerized hosts or Machines. Each of these hosts can contain multiple containers that are created from an image. The benefit of using docker machine on Linux is to efficiently provision multiple Docker hosts on a network, in the cloud or even locally.
+
+Now back to installing this…
