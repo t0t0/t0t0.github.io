@@ -56,9 +56,9 @@ start-delay: 200
 delete-delay: 5000
 lines: # You can add HTML Tags in the Text
   - text: "We reject your logic and substitute our own."
-  - text: "Lol"
+  #- text: ""
 
-me-img: "/img/maxresdefault.jpg"
+me-img: "/img/profile.jpg"
 
 ##############################
 # Color the browser elements #
