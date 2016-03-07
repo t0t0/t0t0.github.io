@@ -89,16 +89,16 @@ post-preview-words: 96
 
 paginate: 5
 
-email-share: True
+email-share: False
 fb-share: True
 twitter-share: True
-linkedin-share: True
+linkedin-share: False
 reddit-share: True
-google-plus-share: True
-tumblr-share: True
-pinterest-share: True
-pocket-share: True
-vkontakte-share: True
+google-plus-share: False
+tumblr-share: False
+pinterest-share: False
+pocket-share: False
+vkontakte-share: False
 
 # disqus-shortname: ""
 
@@ -124,21 +124,19 @@ timeline-img: "/img/timeline/default.png"
 # Contact #
 ###########
 
-email: "your@email.here"
+email: "@email.here"
 
 ##################
 # Social Buttons #
 ##################
 
 social:
-  - title: "facebook"
-    url: "https://facebook.com/"
-  - title: "twitter"
-    url: "https://twitter.com/"
+  - title: "twitter Tomas"
+    url: "https://twitter.com/tsDaenor"
+  - title: "twitter Toon"
+    url: "https://twitter.com/Encr0n"
   - title: "github"
-    url: "https://github.com/PanosSakkos/personal-jekyll-theme"
-  - title: "bitcoin"
-    url: "https://blockchain.info/address/1LHuKC9Em3KA5yoZaf7nngnNdf9K7s2gSi"
+    url: "https://github.com/t0t0"
   - title: "rss"
     url: "/feed.xml"
 
