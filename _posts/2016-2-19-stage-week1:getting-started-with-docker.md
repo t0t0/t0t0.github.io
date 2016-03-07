@@ -99,3 +99,10 @@ $ curl -L https://github.com/docker/machine/releases/download/v0.6.0/docker-mach
 $ docker-machine version
 docker-machine version 0.6.0, build 61388e9
 ```
+
+<br />
+After this was all done, we were ready to start creating our own docker machine to deploy containers.
+
+
+
+## <strong>2. Deploying Docker containers locally</strong>
