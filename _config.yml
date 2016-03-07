@@ -11,4 +11,4 @@ url: "http://locahost:4000" # the base hostname & protocol for your site
 github_username:  t0t0
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
