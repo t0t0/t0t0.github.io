@@ -22,12 +22,52 @@ Basically we needed two parts, the <strong>docker engine</strong> and the <stron
 
 The docker engine is a client-server application consisting of <strong>three elements:</strong>
 
-1. The docker daemon
-2. a REST API
-3. and a CLI that talks to the daemon through the REST API
-
-<div style="text-align:left"><img src ="../../../../images/engine.png" /></div>
+<div>
+<ol class="default">
+	<li>The docker daemon</li>
+	<li>a REST API</li>
+	<li>and a CLI that talks to the daemon through the REST API</li>
+</ol>
+</div>
+<div style="text-align:center"><img src ="../../../../images/engine.png" /></div>
 
 
 We installed this very easily by using the <strong>dnf package manager</strong>. For all of these steps, it’s important to be logged in with sudo priviliges.  
 
+
+#### <strong>1. Make sure all of your packages are up-to-date</strong>
+
+```bash
+$ sudo dnf update
+```
+<br />
+
+#### <strong>2. Add the yum repo</strong>
+
+```bash
+$ sudo tee /etc/yum.repos.d/docker.repo <<-‘EOF’
+[dockerrepo]
+name=Docker Repository 
+baseurl=https://yum.dockerproject.org/repo/main/fedora/$releasever/ 
+enabled=1 
+gpgcheck=1 
+gpgkey=https://yum.dockerproject.org/gpg 
+EOF
+```
+<br />
+
+#### <strong>3. Install the Docker package</strong>
+
+```bash
+$ sudo dnf install docker-engine
+```
+<br />
+
+#### <strong>4. Start the Docker daemon</strong>
+
+```bash
+$ sudo systemctl start docker
+```  
+  
+<br />
+If this works without resulting in any errors, then you’re most likely good to go. But to make sure you can always verify your installation by deploying a test image in a container.
