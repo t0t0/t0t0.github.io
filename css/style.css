@@ -521,15 +521,14 @@
 		input[type="reset"]:hover,
 		.button:hover {
 			background: rgba(188, 202, 206, 0.15);
-			border-color: inherit;
+			border-color: white;
 		}
 
 		input[type="button"].special,
 		input[type="submit"].special,
 		input[type="reset"].special,
 		.button.special {
-			background: #83d3c9;
-			border-color: #83d3c9;
+			border-color: #fff;
 			color: white !important;
 		}
 
@@ -537,8 +536,7 @@
 			input[type="submit"].special:hover,
 			input[type="reset"].special:hover,
 			.button.special:hover {
-				background: #96dad1 !important;
-				border-color: #96dad1 !important;
+				border-color: white !important;
 			}
 
 		input[type="button"].fit,
@@ -565,16 +563,21 @@
 	}
 
 		.wrapper.style1 {
-			padding: 0;
+			background-color: #b0b1c0;
+			background-size: 25em, 25em;
+			color: white;
+			padding: 2em;
+			box-shadow:0px 0px 15px 3px rgba(130,130,130,0.30);
 		}
 
 		.wrapper.style2 {
-			background-color: #83d3c9;
+			background-color: #5e5f75;
 			background-image: url("images/light-bl.svg"), url("images/light-br.svg");
 			background-position: bottom left, bottom right;
 			background-repeat: no-repeat, no-repeat;
 			background-size: 25em, 25em;
 			color: white;
+			box-shadow:0px 0px 25px 4px rgba(130,130,130,0.59), 0 0 50px rgba(0, 0, 0, 0.2) inset;
 		}
 
 			.wrapper.style2 .button:hover {
@@ -598,7 +601,6 @@
 		}
 
 		.wrapper.style4 {
-			background: white;
 			color: inherit;
 			padding: 4em;
 		}
@@ -801,7 +803,7 @@
 	#banner {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
-		background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../images/banner.jpg");
+		background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../images/photo_23384_20130204.jpg");
 		background-position: bottom left, bottom right, top left, top center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;
@@ -822,7 +824,7 @@
 			-o-animation-fill-mode: forwards;
 			-ms-animation-fill-mode: forwards;
 			animation-fill-mode: forwards;
-			background: rgba(52, 27, 43, 0.5);
+			/*background: rgba(96, 96, 101, 0.5);*/
 			color: white;
 			display: inline-block;
 			opacity: 0;
@@ -901,7 +903,7 @@
 	#cta {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
-		background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url("../images/banner.jpg");
+		background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url("../images/photo_23384_20130204.jpg");
 		background-position: top left, top right, top left, bottom center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;
