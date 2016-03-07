@@ -12,7 +12,7 @@ Since Rome wasn't built in a day, we would learn this technology step-by-step, s
 
 
 
-### <strong>1. Setting up Docker on Fedora 23</strong>
+## <strong>1. Setting up Docker on Fedora 23</strong>
 
 The first step in this process was to setup Docker locally on our machine.  
 In our case this was our laptop with Fedora 23 as OS.  
@@ -37,7 +37,7 @@ We installed this very easily by using the <strong>dnf package manager</strong>.
 
 #### <strong>1. Make sure all of your packages are up-to-date</strong>
 
-```
+```bash
 $ sudo dnf update
 ```
 <br />
@@ -45,7 +45,7 @@ $ sudo dnf update
 
 #### <strong>2. Add the yum repo</strong>
 
-```
+```bash
 $ sudo tee /etc/yum.repos.d/docker.repo <<-‘EOF’ 
 [dockerrepo] 
 name=Docker Repository 
@@ -60,7 +60,7 @@ EOF
 
 #### <strong>3. Install the Docker package</strong>
 
-```
+```bash
 $ sudo dnf install docker-engine
 ```
 <br />
@@ -68,7 +68,7 @@ $ sudo dnf install docker-engine
 
 #### <strong>4. Start the Docker daemon</strong>
 
-```
+```bash
 $ sudo systemctl start docker
 ```  
 <br />
@@ -84,3 +84,18 @@ If this works without resulting in any errors, then you’re most likely good to
 With docker machine, it’s possible to deploy multiple hosts, each running a docker engine, a.k.a. Dockerized hosts or Machines. Each of these hosts can contain multiple containers that are created from an image. The benefit of using docker machine on Linux is to efficiently provision multiple Docker hosts on a network, in the cloud or even locally.
 
 Now back to installing this…
+
+### <strong> 1. Download Docker machine and extract it</strong>
+
+```bash
+$ curl -L https://github.com/docker/machine/releases/download/v0.6.0/docker-machine-`uname -s`–`uname -m` > /usr/local/bin/docker-machine && \ chmod +x /usr/local/bin/docker-machine
+```
+<br />
+
+### <strong> 2. Verify your installation by checking the version</strong>
+
+
+```bash
+$ docker-machine version
+docker-machine version 0.6.0, build 61388e9
+```
