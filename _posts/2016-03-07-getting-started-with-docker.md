@@ -1,7 +1,7 @@
 ---
 layout: post
 section-type: post
-title: Title
-category: Category
+title: Getting started with docker
+category: Docker
 tags: [ 'tag1', 'tag2' ]
 ---
