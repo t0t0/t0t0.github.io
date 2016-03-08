@@ -106,3 +106,62 @@ After this was all done, we were ready to start creating our own docker machine 
 
 
 ## <strong>2. Deploying Docker containers locally</strong>
+
+
+To start getting familiar with Docker, we started out with creating a local environment consisting of two NodeJS containers, a Redis container as a Database and an Nginx container to be used as a load-balancer. 
+We based ourselves on <a href="http://anandmanisankar.com/posts/docker-container-nginx-node-redis-example/">this sample workflow</a>.  
+
+
+<div style="text-align:center"><img src="../../../../images/DockerSample.png" alt="Sample Image by ANAND MANI SANKAR" /></div> <br />
+
+As we started out, we deployed our containers by manually issueing the `docker-run` command. 
+Because managing multiple containers is rather inefficient with this command, we decided to work with `docker-compose`, a tool for defining and running multi-container Docker applications.  
+
+Very much like working with Ansible & Vagrant, which we are both experienced by, `docker-compose` automatically deploys (in this case container instead of VM's) based on specifications that are defined in a YML-file.   
+<br />
+Our `docker-compose.yml` looked like this:  
+
+```yml
+nginx:
+    container_name: nginx
+    build: ./nginx
+    links:
+        - node1:node1
+        - node2:node2
+    ports:
+        - "8000:80"
+node1:
+    container_name: node1
+    build: ./node
+    links:
+        - redis
+    expose:
+        - "3000"
+node2:
+    container_name: node2
+    build: ./node
+    links:
+        - redis
+    expose:
+        - "3000"
+redis:
+    container_name: redis
+    image: redis
+    ports:
+        - "6379"
+```
+<br />
+As you can see, we used our own Dockerfiles for both the Nginx and NodeJS containers. Those were located in the folder 'ngninx' and 'node' respectively.  
+To orchestrate the relationships between containers we made use of the `--link` property. This enables a specific container to resolve the addresses of other containers by name or alias.  
+The only port that is published by the docker-machine to allow access from the outside is port 8000 which is mapped to port 80 on the Nginx container.  
+Running the command `docker-compose up` would automatically deploy our containers in order of their dependency.  
+
+
+## <strong> 3. Deploying containers on a remote server</strong>
+
+The next step was to deploy the Docker containers remotely. This time we would run a NodeJS application, developed by our colleague, on both node containers.  
+This remote server was a CoreOS VM running on AWS.
+ 
+
+
+
