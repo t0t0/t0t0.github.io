@@ -112,7 +112,7 @@ To start getting familiar with Docker, we started out with creating a local envi
 We based ourselves on <a href="http://anandmanisankar.com/posts/docker-container-nginx-node-redis-example/">this sample workflow</a>.  
 
 
-<div style="text-align:center"><img src="../../../../images/DockerSample.png" alt="Sample Image by ANAND MANI SANKAR" style="width:50%"/></div> <br />
+<div style="text-align:center"><img src="../../../../images/DockerSample.png" alt="Sample Image by ANAND MANI SANKAR" style="width:60%"/></div> <br />
 
 As we started out, we deployed our containers by manually issueing the `docker-run` command. 
 Because managing multiple containers is rather inefficient with this command, we decided to work with `docker-compose`, a tool for defining and running multi-container Docker applications.  
