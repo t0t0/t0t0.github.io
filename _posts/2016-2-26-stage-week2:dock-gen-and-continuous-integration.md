@@ -58,7 +58,7 @@ In this section we are not going to discuss how to set up CircleCI. For that we 
 
 #### <strong> 1. CircleCI and docker</strong>
 
-So we had to set up CircleCI for the 2 projects for wich we had to provide the infrastructure. We ran both these projects on the CoreOS server we <a href="internship/docker/2016/02/19/stage-week1-getting-started-with-docker.html">talked about last week </a>. We used an nginx container to proxy to both these projects but more about that later.
+So we had to set up CircleCI for the 2 projects for wich we had to provide the infrastructure. We ran both these projects on the CoreOS server we <a href="/internship/docker/2016/02/19/stage-week1-getting-started-with-docker.html">talked about last week </a>. We used an nginx container to proxy to both these projects but more about that later.
 <div style="text-align:center;padding-bottom:25px;"><img src ="/images/stageWeek2/circledock.jpg" style="max-width:100%" /></div>
 
 For setting up CircleCI we defined the tasks in our `circle.yml` file. Because we were using makefiles in our github directory we could use those make commands in the `circle.yml` file. 
