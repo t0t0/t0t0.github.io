@@ -55,7 +55,6 @@ These makefiles also enable us to nest make commands like `docker_build_run`. Th
 
 In this section we are not going to discuss how to set up CircleCI. For that we like to point you to the  <a href="https://circleci.com/docs/gettingstarted">documentation on their website</a>.
 
-<div style="text-align:center;padding-bottom:25px;"><img src ="../../../../images/stageWeek2/circleicon.png" style="max-width:100%" /></div>
 
 #### <strong> 1. CircleCI and docker</strong>
 
@@ -101,7 +100,7 @@ The command `sudo cp infra/config/$CIRCLE_BRANCH/* config/` is an implementation
 
 #### <strong> 2. continuous integration with CircleCI </strong>
 
-Continuous integration with CircleCI is set up with the circle.yml file. Each time you push your code CircleCI automatically builds and deploys your application in the way you defined in the circle.yml file.
+Continuous integration with CircleCI is set up with the `circle.yml` file. Each time you push your code CircleCI automatically builds and deploys your application in the way you defined in the `circle.yml` file.
 
 The workflow we went with is shown in the picture below.
 <div style="text-align:center;padding-bottom:25px;"><img src ="../../../../images/stageWeek2/contint.png" style="max-width:100%" /></div>
@@ -116,11 +115,11 @@ Next we have to unpack and deploy this image. Because we can't remove and replac
 
 ## <strong>2. Docker-gen for nginx </strong>
 
-When we started using CircleCI for auto deployment a problem arised. Every time code got pushed and deployed to our CoreOS server, new containers with new ip-adresses were created. Because of this we had to go into the nginx container to adjust the configuration. This it wasn't very continuous so we had to find a solution for this.
+When we started using CircleCI for auto deployment a problem arised. Every time code got pushed and deployed to our CoreOS server, new containers with new ip-adresses were created. Because of this we had to go into the nginx container to adjust the configuration. This wasn't very continuous so we had to find a solution for this.
 
 <div style="text-align:center"><img src ="../../../../images/stageWeek2/flow.png" style="max-width:100%"/></div>
 
-This is where we started using docker-gen. Docker-gen is a file generator that using a template en docker meta-data can generate files. It can listen on the docker socket if any containers are stopped or started and regenerate the files with the new data. More information on docker-gen can be found <a href="https://github.com/jwilder/docker-gen">here</a>
+This is where we started using docker-gen. Docker-gen is a file generator that, using a template en docker meta-data, can generate files. It can listen on the docker socket if any containers are stopped or started and regenerate the files with the new data. More information on docker-gen can be found <a href="https://github.com/jwilder/docker-gen">here</a>
 
 For our nginx problem we used an implementation of docker-gen made by jason wilder on github called nginx-proxy. 
 The easy way to set this up is by running the next command.
