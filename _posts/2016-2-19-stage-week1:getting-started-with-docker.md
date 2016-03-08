@@ -5,7 +5,7 @@ date:   2016-2-19 14:36:23
 categories: Stage
 ---
 
-<div style="text-align:center"><img src ="../../../../images/docker_logo.png" /></div>
+<div style="text-align:center"><img src ="../../../../images/docker_logo.png" style="width:60%"/></div>
 
 Before beginning our internship at Small Town Heroes, we didn't have any experience with Docker.  
 Since Rome wasn't built in a day, we would learn this technology step-by-step, starting with the basics.  
@@ -112,7 +112,7 @@ To start getting familiar with Docker, we started out with creating a local envi
 We based ourselves on <a href="http://anandmanisankar.com/posts/docker-container-nginx-node-redis-example/">this sample workflow</a>.  
 
 
-<div style="text-align:center"><img src="../../../../images/DockerSample.png" alt="Sample Image by ANAND MANI SANKAR" /></div> <br />
+<div style="text-align:center"><img src="../../../../images/DockerSample.png" alt="Sample Image by ANAND MANI SANKAR" style="width:50%"/></div> <br />
 
 As we started out, we deployed our containers by manually issueing the `docker-run` command. 
 Because managing multiple containers is rather inefficient with this command, we decided to work with `docker-compose`, a tool for defining and running multi-container Docker applications.  
