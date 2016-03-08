@@ -4,7 +4,7 @@ title:  "Internship week 2: Docker-gen and continuous integration"
 date:   2016-2-26 14:36:23
 categories: Internship
 ---
-<div style="text-align:center;padding-bottom:25px;"><img src ="../../../../images/stageWeek2/circleci_logo.png" style="max-width:100%" /></div>
+<div style="text-align:center;padding-bottom:25px;"><img src ="/images/stageWeek2/circleci_logo.png" style="max-width:100%" /></div>
 
 Our next step in learning docker was setting up continuous integration. For this we used CircleCI and some other nifty features. This allowed the other interns whom were developing applications to push their code and it automaticly deployed.
 
