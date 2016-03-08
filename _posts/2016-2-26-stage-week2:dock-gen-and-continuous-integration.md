@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Stage week 2: Docker-gen and continuous integration"
+title:  "Internship week 2: Docker-gen and continuous integration"
 date:   2016-2-26 14:36:23
-categories: Stage
+categories: Internship
 ---
 <div style="text-align:center;padding-bottom:25px;"><img src ="../../../../images/stageWeek2/circleci_logo.png" style="max-width:100%" /></div>
 
