@@ -54,5 +54,101 @@ We decided to use two tags, one to specify the project and one for the environme
 
 #### **Docker-gen**
 
+The use of Docker-gen allows us to automatically generate a config file whenever an event (like killing or creating a new container) occurs.  
+We'll configure a dock-gen container specifically for use with Datadog's dd-agent.  
 
+
+The configuration for this dock-gen container looks like this:
+
+```
+
+[[config]]
+template = "/etc/docker-gen/templates/docker_daemon.yaml.tmpl"
+dest = "/etc/dd-agent/conf.d/docker_daemon.yaml"
+watch = true
+[config.NotifyContainers]
+dd-agent = 1  # 1 is a signal number to be sent; here SIGINT
+
+
+[[config]]
+template = "/etc/docker-gen/templates/nginx.yaml.tmpl"
+dest = "/etc/dd-agent/conf.d/nginx.yaml"
+watch = true
+[config.NotifyContainers]
+dd-agent = 1  # 1 is a signal number to be sent; here SIGINT
+
+
+[[config]]
+template = "/etc/docker-gen/templates/redisdb.yaml.tmpl"
+dest = "/etc/dd-agent/conf.d/redisdb.yaml"
+watch = true
+[config.NotifyContainers]
+dd-agent = 1  # 1 is a signal number to be sent; here SIGINT
+
+
+[[config]]
+template = "/etc/docker-gen/templates/apache.yaml.tmpl"
+dest = "/etc/dd-agent/conf.d/apache.yaml"
+watch = true
+[config.NotifyContainers]
+dd-agent = 1  # 1 is a signal number to be sent; here SIGINT
+```
+<br />
+
+Each integration has its own block containing the source template file, the destination where dock-gen should put the generated config file and a notifier to notify the dd-agent container after a new config file is generated.
+
+#### **Nginx Integration**
+
+To enable the Nginx integration for Datadog, we needed more than just a YAML file. It's also necessary to enable the Nginx status page.  
+This requires Nginx to be compiled with the <a href="http://nginx.org/en/docs/http/ngx_http_stub_status_module.html">HttpdStubStatusModule</a>, which was turned on by default in our case.  
+
+To check whether or not this is the case, execute the following command:
+
+```bash
+$ nginx -V 2>&1 | grep -o with-http_stub_status_module
+```
+<br />  
+You should get `with-http_stub_status_module` as output.  
+  
+Next, the Nginx configuration file needs to be edited. The following code should be added inside a `server{...}` block.
+
+```
+	location /nginx_status {
+	  stub_status on;
+	  access_log   off;
+	  allow x.x.x.x;
+	  deny all;
+	}
+```
+<br />
+
+Obviously `x.x.x.x` has to be replaced by either the IP or CIDR of the machines that are supposed to access this page.  
+For this instance, that would be the Datadog container.  
+  
+Because the IP address of that particular container isn't static and we aren't a fan of hardcoding IP's into config files, we had to find a more efficient and dynamic way to add this bit of code to our config file.  
+
+As a solution, we created a small template config file specifically for using the Datadog Nginx integration:
+
+<pre>
+<code>
+&#123;{ range $host, $value := .}}
+&#123;{ $service := coalesce $value.Env.SERVICE ""}}
+&#123;{ if eq $service "datadog"}}
+server {
+	listen 80;
+
+	location /nginx_status {
+          stub_status on;
+          access_log off;
+ 		  allow &#123;{ $value.IP }};
+          deny all;
+        }
+}
+&#123;&#123; end }}
+&#123;{ end }}
+</code>
+</pre>
+<br />
+
+Now to come back to why we supplied our `docker run` command with the `SERVICE` environment variable... We use this variable in all of our templates to distinguish the container(s) we need as you can see in the example above. 
 

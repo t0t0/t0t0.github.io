@@ -178,9 +178,9 @@ Our Ansible tasks looked like this:
   pip: name=docker-py version=1.2.3
 - name: Setup node containers
   docker:
-   count: "{{ node_count }}"
+   count: "&#123;{ node_count }}"
    image: dev-node
-   state: "{{ node_state }}"
+   state: "&#123;{ node_state }}"
    expose:
    - 3000
 - name: Generate nginx config file
@@ -191,7 +191,7 @@ Our Ansible tasks looked like this:
   docker: 
    name : nginx
    image: dev-nginx
-   state: "{{ nginx_state }}"
+   state: "&#123;{ nginx_state }}"
    ports:
    - "80:80"
    volumes:
