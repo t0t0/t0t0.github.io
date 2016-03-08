@@ -152,3 +152,25 @@ server {
 
 Now to come back to why we supplied our `docker run` command with the `SERVICE` environment variable... We use this variable in all of our templates to distinguish the container(s) we need as you can see in the example above. 
 
+#### **Apache Integration**
+
+
+Similar to how we set up the Nginx integration, Apache requires a status page to be enabled.  
+To do this, we added a bit of code to the Apache config file.
+
+```
+<Location "/server-status">
+    SetHandler server-status
+    Require host dd-agent
+</Location>
+```
+<br />
+
+In contrast to Nginx, it's possible to set a hostname in the `Require` statement. This solves the problem of dd-agent not having a static IP as mentioned before.  
+The only thing to make this work, is to configure a `--link` between both the dd-agent container and the apache container. This will allow the Apache container to resolve the dd-agent hostname to its IP.  
+
+## **The result**
+
+To check out all we've just mentioned for yourself, head over to our <a href="https://github.com/t0t0/DataDog_Config_Generator">GitHub repository</a>.  
+Feel free to comment on and contribute to our project!
+
