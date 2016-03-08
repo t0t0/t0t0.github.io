@@ -5,7 +5,7 @@ date:   2016-3-4 14:36:23
 categories: Stage
 ---
 
-<div style="text-align:center"><img src ="../../../../images/datadogtest.png" style="max-width:100%" style="padding-bottom:25px"/></div>
+<div style="text-align:center"><img src ="../../../../images/datadogtest.png" style="max-width:100%;padding-bottom:25px"/></div>
 
 ## **Datadog**
 
