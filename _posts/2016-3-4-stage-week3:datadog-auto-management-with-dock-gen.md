@@ -164,6 +164,7 @@ To do this, we added a bit of code to the Apache config file.
     Require host dd-agent
 </Location>
 ```
+<br />
 
 In contrast to Nginx, it's possible to set a hostname in the `Require` statement. This solves the problem of dd-agent not having a static IP as mentioned before.  
 The only thing to make this work, is to configure a `--link` between both the dd-agent container and the apache container. This will allow the Apache container to resolve the dd-agent hostname to its IP.  
