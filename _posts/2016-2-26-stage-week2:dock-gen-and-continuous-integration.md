@@ -8,6 +8,9 @@ categories: Internship
 
 Our next step in learning docker was setting up continuous integration. For this we used CircleCI and some other nifty features. This allowed the other interns whom were developing applications to push their code and it automaticly deployed.
 
+<!--more-->
+
+
 ## <strong> 1. Makefiles </strong>
 
 The first thing we used were makefiles. Here we could define our own make commands so we needn't type out the full commands. An example of one of these makefiles can be found below.
