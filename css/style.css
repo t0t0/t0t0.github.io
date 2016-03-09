@@ -27,7 +27,7 @@
 	}
 
 	body, input, select, textarea {
-		color: #7c8081;
+		color: black;
 		font-family: 'Lato', sans-serif;
 		font-size: 15pt;
 		font-weight: 300;
@@ -117,8 +117,8 @@
 	}
 
 	header.special {
-		padding-bottom: 5em;
-		padding-top: 5em;
+		padding-bottom: 0.5em;
+		padding-top: 0.5em;
 		text-align: center;
 	}
 
@@ -602,7 +602,7 @@
 
 		.wrapper.style4 {
 			color: inherit;
-			padding: 4em;
+			padding: 2em;
 		}
 
 /* Header */
@@ -875,7 +875,7 @@
 		background-position: top left, top right, bottom left, bottom right;
 		background-repeat: no-repeat;
 		background-size: 25em;
-		padding: 7em 0;
+		padding: 5em 0;
 	}
 
 		#main > :last-child {
