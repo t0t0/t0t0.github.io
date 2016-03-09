@@ -1,10 +1,10 @@
 # Site settings
 title: t0t0 blog
 email: your-email@domain.com
-description: Toon and Tomas` blog
+description: "Toon and Tomas` blog"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://locahost:4000" # the base hostname & protocol for your site
-#twitter_username: jekyllrb
+excerpt_separator: "<!--more-->"
 github_username:  t0t0
 
 # Build settings

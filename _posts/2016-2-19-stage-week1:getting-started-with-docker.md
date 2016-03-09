@@ -10,7 +10,7 @@ categories: [Internship, Docker]
 Before beginning our internship at Small Town Heroes, we didn't have any experience with Docker.  
 Since Rome wasn't built in a day, we would learn this technology step-by-step, starting with the basics.  
 
-
+<!--more-->
 
 ## <strong>1. Setting up Docker on Fedora 23</strong>
 
