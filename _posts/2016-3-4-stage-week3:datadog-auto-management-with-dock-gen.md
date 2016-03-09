@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Stage week 3: datadog auto management with dock-gen"
+title:  "Internship week 3: datadog auto management with dock-gen"
 date:   2016-3-4 14:36:23
-categories: Stage
+categories: [Internship, Datadog, Docker-gen]
 ---
 
-<div style="text-align:center"><img src ="../../../../images/datadogtest.png" style="max-width:100%" style="padding-bottom:25px"/></div>
+<div style="text-align:center"><img src ="/images/datadogtest.png" style="max-width:100%;padding-bottom:25px"/></div>
 
 ## **Datadog**
 
@@ -122,10 +122,10 @@ Next, the Nginx configuration file needs to be edited. The following code should
 ```
 <br />
 
-Obviously `x.x.x.x` has to be replaced by either the IP or CIDR of the machines that are supposed to access this page.  
+Obviously `x.x.x.x` has to be replaced by either the IP address or CIDR of the machines that are supposed to access this page.  
 For this instance, that would be the Datadog container.  
   
-Because the IP address of that particular container isn't static and we aren't a fan of hardcoding IP's into config files, we had to find a more efficient and dynamic way to add this bit of code to our config file.  
+Because the IP address of that particular container isn't static and we aren't a fan of hardcoding IP adresses into config files, we had to find a more efficient and dynamic way to add this bit of code to our config file.  
 
 As a solution, we created a small template config file specifically for using the Datadog Nginx integration:
 
@@ -166,8 +166,8 @@ To do this, we added a bit of code to the Apache config file.
 ```
 <br />
 
-In contrast to Nginx, it's possible to set a hostname in the `Require` statement. This solves the problem of dd-agent not having a static IP as mentioned before.  
-The only thing to make this work, is to configure a `--link` between both the dd-agent container and the apache container. This will allow the Apache container to resolve the dd-agent hostname to its IP.  
+In contrast to Nginx, it's possible to set a hostname in the `Require` statement. This solves the problem of dd-agent not having a static IP address as mentioned before.  
+The only thing to make this work, is to configure a `--link` between both the dd-agent container and the apache container. This will allow the Apache container to resolve the dd-agent's hostname to its IP address.  
 
 ## **The result**
 
