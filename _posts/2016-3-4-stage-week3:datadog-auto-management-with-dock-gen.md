@@ -14,7 +14,7 @@ Datadog has a neat Docker integration where the Agent is running as an individua
 This container will gather metrics from the machine and all containers created on this machine and forward them to the Datadog web interface.  
 
 <!--more-->
-  
+
 Setting this up is as easy as running a single command:
 
 ```bash
@@ -176,6 +176,35 @@ First of all we iterate over every container on our machine. If there is one wit
 For redis, we need the correct **host IP adress** and **port**. Because it's possible that there are multiple ports exposed, it's imperative for us to find out the one that is actually being used by the redis service.  
 To solve this problem, we supply the redis container with the `VIRTPORT` environment variable. When there is more than one port exposed, we'll choose the one matching this variable. If there is no match or the `VIRTPORT` variable has not been defined, we fall back to the default redis port "6379".
 
+We also mentioned something about **tags** before. These will also be automatically added in our config files. The way we do this, is to execute the `docker run` command for a specific container with additional environment variables that contain these tags.  
+
+For example:  
+
+```bash
+$ docker run -d --name demo -e PROJECT="test" -e ENVIRONMENT="test" -e SERVICE="redis" redis
+```
+<br />
+
+This will create and start a redis container with the tags `project` and `environment`, both equal to "test". The variable `service` is used in our template as explained before.  
+Following the example above, we can easily extract these variables from the specific container while generating the configuration file for Datadog.  
+Executing the 'run' command above will trigger our datadog-dockgen container to generate the following YAML file: 
+
+```
+- host: 172.17.1.41
+    port: 6379
+    # Can be used in lieu of host/port
+    #
+    # unix_socket_path: /var/run/redis/redis.sock # optional, can be used in lieu of host/port
+    # Addional connection options
+    #
+    # Optional extra tags added to all redis metrics
+    tags:
+      - project:test 
+      - environment:test 
+
+```
+<br />
+
 
 #### **Nginx Integration**
 
@@ -220,7 +249,7 @@ server {
 	location /nginx_status {
           stub_status on;
           access_log off;
- 		  allow &#123;{ $value.IP }};
+          allow &#123;{ $value.IP }};
           deny all;
         }
 }
