@@ -1135,6 +1135,7 @@ p code {
   padding: 0px 3px;
   display: inline-block;
   margin: 0px;
+  max-width:100%;
 }
 
 li code {
@@ -1152,6 +1153,7 @@ li code {
   padding: 0px 3px;
   display: inline-block;
   margin: 0px;
+  max-width:100%;
 }
 
 
