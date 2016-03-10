@@ -173,7 +173,8 @@ Within this role we firstly create the two node containers, generate a custom Ng
 
 Our Ansible tasks looked like this:
 
-```
+<pre>
+<code>
 - name: Install docker-py as a workaround for Ansible issue
   pip: name=docker-py version=1.2.3
 - name: Setup node containers
@@ -199,7 +200,8 @@ Our Ansible tasks looked like this:
    links:
    - "node1:node1"
    - "node2:node2"
-```
+</code>
+</pre>
 
 <br />
 
