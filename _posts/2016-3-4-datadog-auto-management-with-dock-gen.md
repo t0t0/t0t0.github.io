@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Datadog auto management with dock-gen"
+title:  "Datadog auto management with docker-gen"
 date:   2016-3-4 14:36:23
 category: Internship
 tags: [week 3, datadog, docker-gen, CI]
