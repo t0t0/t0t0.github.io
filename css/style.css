@@ -1255,7 +1255,7 @@ li h3 small {
     color: #999;
 }
 
-.codinfox-tag-mark{
+.t0t0-tag-mark{
     font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     font-weight: 400;
     font-size: 0.70em;
@@ -1270,13 +1270,13 @@ li h3 small {
 }
 
 
-a.codinfox-tag-mark,
-a.codinfox-tag-mark:hover,
-a.codinfox-tag-mark:visited{
+a.t0t0-tag-mark,
+a.t0t0-tag-mark:hover,
+a.t0t0-tag-mark:visited{
     text-decoration: none;
 }
 
-.codinfox-tag-mark:before{
+.t0t0-tag-mark:before{
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
