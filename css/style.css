@@ -1,5 +1,6 @@
 @import url("font-awesome.min.css");
 @import url("lato.css");
+@import url("")
 
 /*
 	Twenty by HTML5 UP
@@ -876,6 +877,7 @@
 		background-repeat: no-repeat;
 		background-size: 25em;
 		padding: 5em 0;
+		background-color: rgba(232, 238, 244, 0.35);
 	}
 
 		#main > :last-child {
@@ -1172,4 +1174,59 @@ pre {
   background-color: #FAFAFB;
   color: #393939;
   margin: 0px;
+}
+
+
+/* tags */
+
+
+li h3 {
+	text-transform: none;
+	color: #1e6bb8;
+}
+
+li h3 small {
+	font-weight: 400;
+    font-size: 75%;
+    color: #999;
+}
+
+.codinfox-tag-mark{
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 0.70em;
+    line-height: 200%;
+    padding: 0 .5rem 0 .5rem;
+    border-radius: 5px;
+    background: #e7f2f7;
+    color: #6a9fb5;
+    display: inline-block;
+    margin: 0 .5em .5em 0;
+    text-transform: lowercase;
+}
+
+
+a.codinfox-tag-mark,
+a.codinfox-tag-mark:hover,
+a.codinfox-tag-mark:visited{
+    text-decoration: none;
+}
+
+.codinfox-tag-mark:before{
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+
+    content: '\f02c';
 }
