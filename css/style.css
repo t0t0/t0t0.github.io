@@ -1295,7 +1295,25 @@ a.codinfox-tag-mark:visited{
     content: '\f02c';
 }
 
+.t0t0-cat-mark:before{
+	font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
 
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    border-bottom: none;
+
+    content: '\f1d9 ';
+}
 
 
 /* General button style (reset) */
@@ -1330,7 +1348,7 @@ a.codinfox-tag-mark:visited{
 
 /* Button 5 */
 .btn-5 {
-	height: 70px;
+	height: 75px;
 	min-width: 260px;
 	line-height: 24px;
 	overflow: hidden;
@@ -1367,7 +1385,7 @@ a.codinfox-tag-mark:visited{
 }
 
 .btn-5:active:before {
-	color: #703b87;
+	color: #3fb1a3;
 }
 
 /* Button 5a */
@@ -1385,4 +1403,5 @@ a.codinfox-tag-mark:visited{
 
 .btn-5a:hover:before {
 	top: 0;
+	color: #3fb1a3;
 }
