@@ -1242,7 +1242,9 @@ pre {
 
 
 /* tags */
-
+h3.nomarginbot{
+	margin-bottom: 0;
+}
 
 li h3 {
 	text-transform: none;
@@ -1269,6 +1271,22 @@ li h3 small {
     text-transform: lowercase;
 }
 
+.t0t0-cat-mark{
+	padding: 0 .5rem 0 .5rem;
+	border-radius: 5px;
+	background: #f0f0f0;
+	color: #999;
+	text-decoration: none;
+	margin-bottom: .75rem;
+	display: inline-block;
+	margin: 0 .5em .5em 0;
+}
+
+a.t0t0-cat-mark,
+a.t0t0-cat-mark:hover,
+a.t0t0-cat-mark:visited{
+    text-decoration: none;
+}
 
 a.t0t0-tag-mark,
 a.t0t0-tag-mark:hover,
