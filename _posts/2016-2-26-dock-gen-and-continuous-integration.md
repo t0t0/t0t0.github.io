@@ -3,7 +3,7 @@ layout: post
 title:  "Docker-gen and continuous integration"
 date:   2016-2-26 14:36:23
 category: Internship
-tags: [internship week 2, makefile, coreos, circleci, nginx, docker-gen, continuous integration]
+tags: [week 2, makefile, circleci, nginx, docker-gen, CI]
 ---
 <div style="text-align:center;padding-bottom:25px;"><img src ="/images/stageWeek2/circleci_logo.png" style="max-width:100%" /></div>
 
