@@ -1315,6 +1315,26 @@ a.t0t0-tag-mark:visited{
     content: '\f1d9 ';
 }
 
+.t0t0-blog-mark:before{
+	font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    border-bottom: none;
+
+    content: '\f0e5 ';
+}
+
 
 /* General button style (reset) */
 .btn {
