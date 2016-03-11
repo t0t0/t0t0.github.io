@@ -3,7 +3,7 @@ layout: post
 title:  "Internship week 1: Getting started with docker"
 date:   2016-2-19 14:36:23
 categories: [Internship, Docker]
-tags: [web, jekyll]
+tags: [stage week 1, docker, ansible, docker compose]
 ---
 
 <div style="text-align:center"><img src ="/images/docker_logo.png" style="max-width:100%"/></div>
