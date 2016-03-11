@@ -7,6 +7,14 @@ layout: default
         <h2>Our <strong>Blog</strong></h2>
     </header>
     <section class="wrapper style4 container">
+    {% comment %}
+=======================
+The purpose of this snippet is to list all the tags you have in your site.
+=======================
+{% endcomment %}
+{% for tag in tags %}
+    <a href="#{{ tag | slugify }}"> {{ tag }} </a>
+{% endfor %}
         <ul class="posts">
           {% for post in site.posts %}
             <li class="wrapper {% if forloop.first %} style2 {% else %} style1 {% endif %}">
