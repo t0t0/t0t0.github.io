@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Internship week 3: datadog auto management with dock-gen"
+title:  "datadog auto management with dock-gen"
 date:   2016-3-4 14:36:23
 category: Internship
 tags: [internship week 3, datadog, docker-gen, continuous integration]
