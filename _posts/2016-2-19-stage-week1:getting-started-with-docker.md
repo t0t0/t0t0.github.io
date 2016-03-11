@@ -2,7 +2,7 @@
 layout: post
 title:  "Internship week 1: Getting started with docker"
 date:   2016-2-19 14:36:23
-categories: Internship
+category: Internship
 tags: [internship week 1, docker, ansible, docker-compose]
 ---
 
