@@ -31,14 +31,14 @@ Here we generate all the categories.
 <article id="main">
      <header class="special container">
         <h2>Posts by <strong>Category</strong></h2>
-        <h3><a href="/blog.html" class="btn btn-5 btn-5a t0t0-blog-mark" style="border-bottom:none"><span><strong>blog</strong></span></a><a href="/tags.html" class="btn btn-5 btn-5a t0t0-tag-mark"><span><strong>tags</strong></span></a></h3>
+        <h3 class="nomarginbot"><a href="/blog.html" class="btn btn-5 btn-5a t0t0-blog-mark" style="border-bottom:none"><span><strong>blog</strong></span></a><a href="/tags.html" class="btn btn-5 btn-5a t0t0-tag-mark"><span><strong>tags</strong></span></a></h3>
     </header>
     <section class="wrapper style3 container">
         <p>
         {% for ct in cats %}
-        <a href="#{{ ct | slugify }}" class="t0t0-category-mark" style="color:#999;text-decoration: none; border-bottom: none;"> {{ ct }} </a> &nbsp;&nbsp;
+        <a href="#{{ ct | slugify }}" class="t0t0-cat-mark" style="color:#999;text-decoration: none; border-bottom: none;"> {{ ct }} </a> &nbsp;&nbsp;
         {% endfor %}
-        <a href="#no-category" class="t0t0-category-mark" style="color:#999;text-decoration: none; border-bottom: none; "> No Category </a> &nbsp;&nbsp;
+        <a href="#no-category" class="t0t0-cat-mark" style="color:#999;text-decoration: none; border-bottom: none; "> No Category </a> &nbsp;&nbsp;
         </p>
         {% for ct in cats %}
         <h2 id="{{ ct | slugify }}"><strong>{{ ct }}</strong></h2>
