@@ -18,20 +18,20 @@ The only way I've found to change running containers is to update their name. So
 add the host to the upstream list but setting it to down in the config. 
 
 ```Go
-{{ range $host, $containers := groupByMulti $ "Env.VIRTUAL_HOST" "," }}
-upstream {{ $host }} {
-{{ range $container := $containers }}
-{{ $name := $container.Name }}
-{{ if hasPrefix "startup" $name }}
-		{{ template "upstream" (dict "Container" $container) }}
-{{else}}
+&#123;{ range $host, $containers := groupByMulti $ "Env.VIRTUAL_HOST" "," }}
+upstream &#123;{ $host }} {
+&#123;{ range $container := $containers }}
+&#123;{ $name := $container.Name }}
+&#123;{ if hasPrefix "startup" $name }}
+		&#123;{ template "upstream" (dict "Container" $container) }}
+&#123;{else}}
 	/* original code */
-{{ end }}
-{{ end }}
+&#123;{ end }}
+&#123;{ end }}
 }
 ```
 
-By not adding an "Adress" in the line `{{ template "upstream" (dict "Container" $container) }}` the template upstream generated a line with the ip and set it to down. This way when the Container is fully started we just remove the "down" part and the server is acessible.
+By not adding an "Adress" in the line `&#123;{ template "upstream" (dict "Container" $container) }}` the template upstream generated a line with the ip and set it to down. This way when the Container is fully started we just remove the "down" part and the server is acessible.
 
 But then we had a problem. Apparently a rename on a container did not trigger an update for docker-gen to regenerate the config files. So now we had to find a way to manually trigger an update for docker-gen after renaming our started container. For this we used the `docker kill` command. `docker kill` allows us to send signals to containers. The default signal is sends is the kill signal, hence the name `docker kill`. With this `kill` command we send a `sighup` do our docker-gen and it regenerates our config files for nginx.
 
