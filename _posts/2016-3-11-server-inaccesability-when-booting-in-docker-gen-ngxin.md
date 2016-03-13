@@ -7,7 +7,7 @@ tags: [week 4, nginx, docker-gen, CI]
 ---
 
 This week we got a request, what if the app on your container takes a while to start and it isn't allowed to be acessed yet.
-In a devellopment environment it doesn't really matter if your applications take 2-3 minutes to load and the webpage isn't acessible.
+In a development environment it doesn't really matter if your applications take 2-3 minutes to load and the webpage isn't acessible.
 But when you're patching live environments of proxy forwards to a server that isn't accessible for 2-3 minutes, thats quite a while.
 
 <!--more-->
