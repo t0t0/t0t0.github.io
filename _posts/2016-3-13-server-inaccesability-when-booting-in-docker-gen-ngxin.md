@@ -17,7 +17,8 @@ But when you're patching live environments of proxy forwards to a server that is
 The only way I've found to change running containers is to update their name. So the solution I went with was checking if the Container we didn't want requests to get forwarded to has a prefix "startup". If it dit have the prefix "startup" I used the existing code in the template to
 add the host to the upstream list but setting it to down in the config. 
 
-```Go
+<pre>
+<code>
 &#123;{ range $host, $containers := groupByMulti $ "Env.VIRTUAL_HOST" "," }}
 upstream &#123;{ $host }} {
 &#123;{ range $container := $containers }}
@@ -29,7 +30,9 @@ upstream &#123;{ $host }} {
 &#123;{ end }}
 &#123;{ end }}
 }
-```
+&#123;{ end }}
+</code>
+</pre>
 
 By not adding an "Adress" in the line `&#123;{ template "upstream" (dict "Container" $container) }}` the template upstream generated a line with the ip and set it to down. This way when the Container is fully started we just remove the "down" part and the server is acessible.
 
