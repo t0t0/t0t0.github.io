@@ -30,10 +30,10 @@ https://github.com/phoronix-test-suite/phoronix-test-suite
 
 #### Phoronix test suite
 
-On our nodeJS containers (running on Alpine Linux) there is no package available for sysbench so we turned to "Phoronix test suite".
+On our nodeJS containers (running on Alpine Linux) there is no packages available like for example "sysbench" so we turned to "Phoronix test suite".
 
-We will run this software locally from the extrated tar.gz package. The only dependency to use phoronix test suite is having CL support for PHP installed.  
-Specifics test could require extra packages to be installed.
+We will run this software locally from the extracted tar.gz package. The only dependency to use phoronix test suite is having CL support for PHP installed.  
+Note that specific test could require extra packages to be installed.
 
 1. **Installing command-line support for PHP**
 
