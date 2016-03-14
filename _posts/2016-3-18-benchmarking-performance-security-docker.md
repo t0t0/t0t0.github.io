@@ -2,8 +2,8 @@
 layout: post
 title:  "Benchmarking performance & security on Docker containers"
 date:   2016-3-18 14:36:23
-category: Internship
-tags: [week 4, docker, performance, security, benchmarking]
+category: Internship week 4
+tags: [docker, performance, security, benchmarking]
 ---
 
 
@@ -11,9 +11,8 @@ INTRO
 
 <!--more-->
 
-## Benchmarking performance & security on Docker containers
 
-### 1. Sources
+### Sources
 
 #### Security
 https://github.com/docker/docker-bench-security
@@ -23,21 +22,18 @@ https://github.com/misterbisson/simple-container-benchmarks
 
 https://github.com/phoronix-test-suite/phoronix-test-suite
 
+## Benchmarking performance:
 
-### 2. Performance benchmarking without any installed software:
+### 1. Performance benchmarking without any installed software:
 
-### 3. Performance benchmarking with installed software:
+### 2. Performance benchmarking with installed software:
 
-#### Sysbench
+#### Phoronix test suite
 
-On our apache containers: `apt-get update && apt-get install -y sysbench`
+On our nodeJS containers (running on Alpine Linux) there is no package available for sysbench so we turned to "Phoronix test suite".
 
-
-#### Phoronix
-
-On our node containers there is no package available for sysbench so we turned to "Phoronix test suite".
-
-We will run this software locally from the extrated tar.gz package. The only dependency to use phoronix test suite is having CL support for PHP installed.
+We will run this software locally from the extrated tar.gz package. The only dependency to use phoronix test suite is having CL support for PHP installed.  
+Specifics test could require extra packages to be installed.
 
 1. **Installing command-line support for PHP**
 
@@ -56,13 +52,42 @@ In the extracted directory, execute this command:
 ```shell
 $ ./install-sh
 ```
-#### Installing tests for Phoronix:
+#### Installing tests:
 
 Via http://openbenchmarking.org/
 
 ```shell
 $ phoronix-test-suite install [TEST NAME]
 ```
+
+#### Filesystem benchmarking: 
+
+```shell
+$ phoronix-test-suite benchmark pts/iozone
+```
+
+#### CPU benchmarking:
+
+
+```shell
+$ phoronix-test-suite benchmark pts/c-ray
+```  
+  
+Test system's audio/video encoding performance using ffmpeg.  
+
+```shell
+$ phoronix-test-suite benchmark pts/ffmpeg
+```
+
+#### Memory benchmarking: 
+
+```shell
+$ phoronix-test-suite benchmark pts/stream
+```
+
+
+
+
 
 
 
