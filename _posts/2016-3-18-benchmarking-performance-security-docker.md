@@ -39,7 +39,7 @@ On our node containers there is no package available for sysbench so we turned t
 
 We will run this software locally from the extrated tar.gz package. The only dependency to use phoronix test suite is having CL support for PHP installed.
 
-1. ** Installing command-line support for PHP**
+1. **Installing command-line support for PHP**
 
 ```shell
 $ apk update && apk add php php-dom php-zip php-json
