@@ -32,11 +32,7 @@ sh docker-bench-security.sh
 ```
 ## Benchmarking performance:
 
-### 1. Performance benchmarking without any installed software:
-
-### 2. Performance benchmarking with installed software:
-
-#### Phoronix test suite
+### Phoronix test suite
 
 On our nodeJS containers (running on Alpine Linux) there is no packages available like for example "sysbench" so we turned to "Phoronix test suite".
 
