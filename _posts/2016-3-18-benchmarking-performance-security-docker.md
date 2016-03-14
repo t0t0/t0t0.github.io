@@ -56,6 +56,13 @@ In the extracted directory, execute this command:
 ```shell
 $ ./install-sh
 ```
+#### Installing tests for Phoronix:
+
+Via http://openbenchmarking.org/
+
+```shell
+$ phoronix-test-suite install [TEST NAME]
+```
 
 
 
