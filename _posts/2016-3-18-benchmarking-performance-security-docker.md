@@ -35,7 +35,29 @@ On our apache containers: `apt-get update && apt-get install -y sysbench`
 
 #### Phoronix
 
-On our node containers: No package available for sysbench
+On our node containers there is no package available for sysbench so we turned to "Phoronix test suite".
+
+We will run this software locally from the extrated tar.gz package. The only dependency to use phoronix test suite is having CL support for PHP installed.
+
+1. ** Installing command-line support for PHP**
+
+```shell
+$ apk update && apk add php
+```
+2. **Downloading and extracting the Phoronix test suite package**
+
+```shell
+$ wget http://www.phoronix-test-suite.com/download.php?file=phoronix-test-suite-6.2.2 -O phoronix-test-suite-6.2.2.tar.gz
+$ tar xzf phoronix-test-suite-6.2.2.tar.gz
+```
+
+3. **Installing Phoronix test suite**
+In the extracted directory, execute this command:
+```shell
+$ ./install-sh
+```
+
+
 
 
 
