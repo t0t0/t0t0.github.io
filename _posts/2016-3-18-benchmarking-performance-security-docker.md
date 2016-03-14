@@ -42,7 +42,7 @@ We will run this software locally from the extrated tar.gz package. The only dep
 1. ** Installing command-line support for PHP**
 
 ```shell
-$ apk update && apk add php
+$ apk update && apk add php php-dom php-zip php-json
 ```
 2. **Downloading and extracting the Phoronix test suite package**
 
