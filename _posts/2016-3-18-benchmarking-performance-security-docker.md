@@ -51,8 +51,8 @@ $ wget http://www.phoronix-test-suite.com/download.php?file=phoronix-test-suite-
 $ tar xzf phoronix-test-suite-6.2.2.tar.gz
 ```
 
-3. **Installing Phoronix test suite**
-In the extracted directory, execute this command:
+3. **Installing Phoronix test suite**  
+In the extracted directory, execute this command:  
 ```shell
 $ ./install-sh
 ```
