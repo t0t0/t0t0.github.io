@@ -2,8 +2,8 @@
 layout: post
 title:  "Getting started with docker: Installation"
 date:   2016-2-16 14:36:23
-category: Internship
-tags: [week 1, docker, fedora]
+category: "Internship week 1"
+tags: [docker, fedora]
 ---
 
 <div style="text-align:center"><img src ="/images/docker_logo.png" style="max-width:100%"/></div>

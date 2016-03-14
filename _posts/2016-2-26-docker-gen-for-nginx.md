@@ -2,8 +2,8 @@
 layout: post
 title:  "Docker-gen & Nginx as a proxy web-server"
 date:   2016-2-26 14:36:23
-category: Internship
-tags: [week 2, nginx, docker-gen]
+category: "Internship week 2"
+tags: [nginx, docker-gen]
 ---
 
 

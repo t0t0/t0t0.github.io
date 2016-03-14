@@ -2,8 +2,8 @@
 layout: post
 title:  "Continuous integration"
 date:   2016-2-24 14:36:23
-category: Internship
-tags: [week 2, makefile, circleci, CI]
+category: "Internship week 2"
+tags: [makefile, circleci, CI]
 ---
 <div style="text-align:center;padding-bottom:25px;"><img src ="/images/stageWeek2/circleci_logo.png" style="max-width:100%" /></div>
 

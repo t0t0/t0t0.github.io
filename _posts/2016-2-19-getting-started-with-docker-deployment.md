@@ -2,8 +2,8 @@
 layout: post
 title:  "Getting started with docker: Deploying containers"
 date:   2016-2-19 14:36:23
-category: Internship
-tags: [week 1, docker, ansible, docker-compose]
+category: "Internship week 1"
+tags: [docker, ansible, docker-compose]
 ---
 
 

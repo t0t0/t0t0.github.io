@@ -2,8 +2,8 @@
 layout: post
 title:  "Datadog auto management with docker-gen"
 date:   2016-3-4 14:36:23
-category: Internship
-tags: [week 3, datadog, docker-gen, CI]
+category: "Internship week 3"
+tags: [datadog, docker-gen, CI]
 ---
 
 <div style="text-align:center"><img src ="/images/datadogtest.png" style="max-width:100%;padding-bottom:25px"/></div>

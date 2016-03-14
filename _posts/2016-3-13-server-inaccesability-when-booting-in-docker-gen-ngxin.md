@@ -2,8 +2,8 @@
 layout: post
 title:  "Implementing server inaccesability when booting for nginx with docker-gen"
 date:   2016-3-13 15:22:23
-category: Internship
-tags: [week 4, nginx, docker-gen, CI]
+category: "Internship week 4"
+tags: [nginx, docker-gen, CI]
 ---
 
 This week we got a request, what if the app on your container takes a while to start and it isn't allowed to be acessed yet.
