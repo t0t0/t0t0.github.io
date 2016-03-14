@@ -85,9 +85,24 @@ $ phoronix-test-suite benchmark pts/ffmpeg
 $ phoronix-test-suite benchmark pts/stream
 ```
 
+### Service specific benchmarks:
 
+#### Apache:
 
+```shell
+$ phoronix-test-suite benchmark pts/apache
+```
 
+#### Nginx:
+
+```shell
+$ phoronix-test-suite benchmark pts/nginx
+```
+#### Redis:
+
+```shell
+$ phoronix-test-suite benchmark pts/redis
+```
 
 
 
