@@ -21,7 +21,15 @@ https://github.com/docker/docker-bench-security
 https://github.com/misterbisson/simple-container-benchmarks
 
 https://github.com/phoronix-test-suite/phoronix-test-suite
+## Benchmarking security:  
+  
+A simple script that can be run locally on the host and that checks for dozens of common best-practices around security for Docker containers in a production environment.  
 
+```
+git clone https://github.com/docker/docker-bench-security.git
+cd docker-bench-security
+sh docker-bench-security.sh
+```
 ## Benchmarking performance:
 
 ### 1. Performance benchmarking without any installed software:
