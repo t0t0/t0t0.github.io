@@ -24,6 +24,7 @@ https://github.com/phoronix-test-suite/phoronix-test-suite
 ## Benchmarking security:  
   
 A simple script that can be run locally on the host and that checks for dozens of common best-practices around security for Docker containers in a production environment.  
+Obviousky, we want all warnings to be passes.  
 
 ```
 git clone https://github.com/docker/docker-bench-security.git
