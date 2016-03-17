@@ -8,7 +8,7 @@ tags: [docker, performance, benchmarking, phoronix]
 
 
 During our fourth week at Small Town Heroes, we were asked to dig deeper into benchmarking both performance and security of docker containers.
-This blog post will cover the part about benchmarking performance. We run tests for our disk, cpu, memory and separate services.
+This blog post will cover the part about benchmarking performance. We run tests for benchmarking the performance of our disk, cpu, memory and also separate services.
 
 <!--more-->
 
@@ -23,7 +23,7 @@ We decided to use a separate container on which the phoronix test suite, includi
 As we like to keep our docker images as small as possible, we use <a href="http://www.alpinelinux.org/">alpine linux</a> as our base image.  
   
 The next step is to provide all dependencies of both phoronix test suite as our tests that we will install. Normally phoronix would ask for user input upon installing a test when extra packages need to be installed. This is something we obviously want to avoid while building the docker image.  
-After these packages are downloaded and installed, we start with installing the phoronix test suite itself. To do this, we first download the official compressed package and extract it. We then remove the download file so we don't have any unnecessary files on our system. At last we cd into the extracted folder and run the install script.  
+After these packages are downloaded and installed, we start with installing the phoronix test suite itself. To do this, we first download the official compressed package and extract it. We then remove the downloaded file so we don't have any unnecessary files on our system. Then we 'cd' into the extracted folder and run the install script.  
   
 Lastly, we install our predefined tests by running the command `phoronix-test-suite install [test]`  
 This results in the Dockerfile below:
