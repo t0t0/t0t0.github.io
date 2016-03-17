@@ -46,7 +46,8 @@ The next step is to provide all dependencies of both phoronix test suite as our 
 After these packages are downloaded and installed, we start with installing the phoronix test suite itself. To do this, we first download the official compressed package and extract it. We then remove the download file so we don't have any unnecessary files on our system. At last we cd into the extracted folder and run the install script.  
   
 Lastly, we install our predefined tests and run the command `phoronix-test-suite detailed-system-info`. This command will allow us to always check our system info when checking the logs of this specific container.  
-
+  
+All of this results in this Dockerfile below:
 
 
 ```
