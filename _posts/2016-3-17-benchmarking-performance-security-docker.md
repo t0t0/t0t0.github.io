@@ -78,7 +78,7 @@ bench_save:
 	docker save -o docker-bench.tar docker-bench
 
 bench_upload:
-	scp docker-bench.tar $(CORE_IP):$(CORE_LOCATION)
+	scp docker-bench.tar $(CONNECT):$(CORE_LOCATION)
 
 bench_load: 
 	ssh $(CONNECT) docker load -i docker-bench.tar
