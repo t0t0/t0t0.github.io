@@ -24,8 +24,8 @@ As we like to keep our docker images as small as possible, we use <a href="http:
   
 The next step is to provide all dependencies of both phoronix test suite as our tests that we will install. Normally phoronix would ask for user input upon installing a test when extra packages need to be installed. This is something we obviously want to avoid while building the docker image.  
 After these packages are downloaded and installed, we start with installing the phoronix test suite itself. To do this, we first download the official compressed package and extract it. We then remove the downloaded file so we don't have any unnecessary files on our system. Then we 'cd' into the extracted folder and run the install script.  
-  
-Lastly, we install our predefined tests by running the command `phoronix-test-suite install [test]`  
+Lastly, we install our predefined tests by running the command `phoronix-test-suite install [test]`    
+
 This results in the Dockerfile below:
 
 
