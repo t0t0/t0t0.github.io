@@ -119,23 +119,18 @@ In our example, this looks like this:
 
 bench_disk:
 	@ssh $(CONNECT) docker exec -i docker-bench phoronix-test-suite run pts/iozone
-	@exit
 
 bench_cpu:
 	@ssh $(CONNECT) docker exec -i docker-bench phoronix-test-suite run pts/c-ray
-	@exit
 
 bench_redis:
 	@ssh $(CONNECT) docker exec -i docker-bench phoronix-test-suite run pts/redis
-	@exit
 
 bench_apache:
 	@ssh $(CONNECT) docker exec -i docker-bench phoronix-test-suite run pts/apache
-	@exit
 
 bench_memory:
 	@ssh $(CONNECT) docker exec -i docker-bench phoronix-test-suite run pts/stream
-	@exit
 ```
 <br />
 
