@@ -142,3 +142,6 @@ bench_memory:
 For example, running the command `make bench_memory` locally will execute the benchmark test "stream" on our docker container through an SSH connection and display the results in our terminal on the local machine. Pressing "ENTER" will close the connection after the bechmark is fininshed.
 
 <div style="text-align:center;padding-bottom:25px;"><img src ="/images/bench_memory.png" style="max-width:100%" /></div>
+
+
+UPDATE: Showing, analyzing and comparing test results will be talked about in a blog post later on. 
