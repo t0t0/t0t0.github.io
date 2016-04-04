@@ -26,17 +26,8 @@ Or you could perform this check by using the coreos-cloudinit binary and providi
 
 Now we arrive to how we want to use this cloud-init. Upon startup we want to deploy our entire infrastructure.  
 At this moment our infrastructure consists of these Docker containers:  
-<ol class="default">
- 	<li>redis</li>
-	<li>storage</li>
-	<li>dockgen-datadog</li>
-	<li>dd-agent</li>
-	<li>dockgen-nginx</li>
-	<li>nginx</li>
-	<li>fluentd</li>
-	<li>kibana</li>
-	<li>elastic</li>
-</ol>
+
+<div style="text-align:center"><img src ="/images/infra.png" style="max-width:100%;padding-bottom:25px"/></div>
 
 This means that **9 containers** need to be up and running after inital boot and on every reboot. The way we do this is by running each container as a **systemd unit**.   
 
