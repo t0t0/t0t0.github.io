@@ -145,7 +145,7 @@ This results in this unit definition:
 As you can see, we make use of our own Docker image that will be loaded from a tarball. Also, our own custom config file will be mounted on this container on run.  
   
 #### **Cleaning up older images**
-A final issue we encountered is when loading a Docker image from a tarball that already exists. Instead of overwriting, the older one gets renamed to "<none>" and is actually kept. To remove these old Docker images we wrote a very simple cleanup script which will be run after the fluent or nginx image has been loaded. This script is written on boot itself so we don't have to supply it remotely. To do this we utilize the <code class="highlighter-rouge">write_files</code> section in our <code class="highlighter-rouge">cloud-config</code>.
+A final issue we encountered is when loading a Docker image from a tarball that already exists. Instead of overwriting, the older one gets renamed to "<none&#62;" and is actually kept. To remove these old Docker images we wrote a very simple cleanup script which will be run after the fluent or nginx image has been loaded. This script is written on boot itself so we don't have to supply it remotely. To do this we utilize the <code class="highlighter-rouge">write_files</code> section in our <code class="highlighter-rouge">cloud-config</code>.
 
 ```
 write_files:
