@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Configuring cloud-config with systemd for a Docker environment"
+title:  "Setting up cloud-config with systemd for a Docker environment"
 date:   2016-3-30 14:36:23
 category: "Internship week 7"
 tags: [coreos, docker, systemd]
