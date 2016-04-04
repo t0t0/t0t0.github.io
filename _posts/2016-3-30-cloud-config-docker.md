@@ -18,7 +18,7 @@ CoreOS cloud-init allows a user to customize their CoreOS machines by providing 
 As said this can be done through user-data which, in our case, would be via the Amazon web console where you can copy-paste the contents of your cloud-config file into the user-data input box. Any changes made to the cloud-config will only be in effect after the machine is stopped or recreated. 
 
 <div style="text-align:center"><img src ="/images/ec2-instance-cloud-config.png" style="max-width:100%;padding-bottom:25px"/></div>
-.
+
 To check whether your cloud-config doesn't contain any syntax errors and is valid for use, CoreOS provided a handy tool called <a href="https://coreos.com/validate/">Cloud-Config Validator</a>.
 Or you could perform this check by using the coreos-cloudinit binary and providing the `-validate` flag.
 
