@@ -25,7 +25,7 @@ Or you could perform this check by using the coreos-cloudinit binary and providi
 ## **Running Docker containers with Systemd**
 
 Now we arrive to how we want to use this cloud-init. Upon startup we want to deploy our entire infrastructure.  
-At this moment our infrastructure consists of these Docker containers:  
+At this moment **our infrastructure** consists of these Docker containers:  
 
 <div style="text-align:center"><img src ="/images/infra.png" style="max-width:100%;padding-bottom:25px"/></div>
 
@@ -113,7 +113,7 @@ Firstly we remove any existing containers that can be existing after a reboot.  
 Lastly we run the container by using the `docker run` command and provide any necessary variables/flags.  
 
 ### **Implementing dependencies into systemd**
-When a container is dependant of another container like in the case of a `--link` flag, we'll have to make sure that the services to which these containers are attached, are being started in the correct order. For example, our Fluent and Kibana containers can't run without the Elastic container already running because they are both linked to this container. To implement this dependency into systemd, you can use the parameter `After` and `Requires`.  
+When a container is dependant of another container like in the case of a `--link` flag, we'll have to make sure that the services to which these containers are attached, are being started in the correct order. For example, our Fluent and Kibana containers can't run before the Elastic container is created because they are both linked to this container. To implement this dependency into systemd, you can use the parameter `After` and `Requires`.  
   
 **Requires:** If this unit gets activated, the units listed here will be activated as well. If one of the other units gets deactivated or its activation fails, this unit will be deactivated.
 
