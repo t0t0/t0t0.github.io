@@ -485,6 +485,10 @@
 				color: #fff;
 			}
 
+	table, th, td {
+		border: 1px solid black;
+	}
+
 /* Button */
 
 	input[type="button"],
