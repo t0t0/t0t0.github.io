@@ -64,3 +64,45 @@ Docker provides these drivers for logging:
 
 Basically if you would like to see the logs of a specific container, you'd have to use the `docker logs` command. However this command is only compatible with the json-file and journald logging drivers. Naturally this means that for displaying logs via another logging driver, you'd have to have other means of displaying these logs.  
 In any case it's clear that there are a lot of options to choose from where most depends on personal choice. 
+
+### <b> The stack</b>
+
+For our solution we went with the default json logging driver. This gives us the flexibility to use the `docker logs` command when we are logged in to the server as well as forwarding our logs to our log storage container. For collecting, storing and displaying the logs we went with the fluentd-elasticsearch-kibana stack.
+
+#### <b> One container to collect them all </b>
+
+So for collecting the logs we went with a fluentd container. we first tried using the fluentd logging driver but then problems arised. First of all we can not start any containers when the fluentd container is not started due to the required `--link`. and secondly, when the fluentd container crashes for some reason, all the logs for the period that is not running are lost.
+
+we have fluentd collecting logs from the default json docker logs, fluentd stores in a position file what logs he already read so when it crashes it just reads the position file and knows what logs it did not send to storage yet.
+
+this was the config file we started with.
+```
+<source>
+  type tail
+  read_from_head true
+  pos_file fluentd-docker.pos
+  path /var/lib/docker/containers/*/*-json.log
+  time_format %Y-%m-%dT%H:%M:%S
+  tag docker.*
+  format json
+</source>
+
+<match docker.**>
+  type elasticsearch
+  log_level info
+  host elastic
+  port 9200
+  include_tag_key true 
+  logstash_format true
+  flush_interval 5s
+</match>
+```
+
+With this config file all that fluent does is read the json log files from docker. Stores it current position in thos json files in its position file. Then it tags them with a prefix docker. Then when all the logs with a prefix docker (so all of them) are send to the elasticsearch container. This had almoust everything we need except we had no idea what exact container the logs were coming from, the only thing added was the long container id string but that was not what we wanted.
+We wanted to have the hostname we originally set when starting the containers 
+
+#### <b> One container to store them all </b>
+
+#### <b> One container to show them all </b>
+
+
