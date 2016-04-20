@@ -129,12 +129,14 @@ To store all the logs we went with just a regular elasticsearch container. It st
 
 Again nothing special here. Just a regular kibana container and a dns entry for accessing it. The only thing we added here was authentication. There are a lot of complicated ways to do this but we chose just to add authentication to our nginx. But because we are using docker-gen for this as explained in <a href="/internship%20week%202/2016/02/24/dock-gen-and-continuous-integration.html">our previous blog post</a> it got a we had to add authentication to our template. This turned out to be rather simple just by adding the next few lines of code inside the 'location /' block
 
-```
+<pre>
+<code>
 		&#123;{ if hasPrefix "logging-stage" $host }}
 		auth_basic	"Restricted &#123;{ $host }}";
 		auth_basic_user_file	&#123;{ (printf "/etc/nginx/htpasswd/%s" $host) }};
 		&#123;{ end }}.
-
-```
+</code>
+</pre>
+<br />
 
 What this does is check if the 'VIRTUAL_HOST' variable has a prefix logging-stage and if so, add basic authentication to that location block. The password file is premade and can be copied when building the docker image or just add a volume mounting the file on the desired location.
