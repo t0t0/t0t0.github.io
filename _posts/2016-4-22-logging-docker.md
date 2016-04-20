@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Centralized logging for Docker containers"
-date:   2016-4-22 14:36:23
+date:   2016-4-19 14:36:23
 category: "Internship week 8"
 tags: [docker, logging, fluentd, kibana, elastic]
 ---
