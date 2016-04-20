@@ -76,6 +76,7 @@ So for collecting the logs we went with a fluentd container. we first tried usin
 we have fluentd collecting logs from the default json docker logs, fluentd stores in a position file what logs he already read so when it crashes it just reads the position file and knows what logs it did not send to storage yet.
 
 this was the config file we started with.
+
 ```
 <source>
   type tail
@@ -96,13 +97,44 @@ this was the config file we started with.
   logstash_format true
   flush_interval 5s
 </match>
+
 ```
 
 With this config file all that fluent does is read the json log files from docker. Stores it current position in thos json files in its position file. Then it tags them with a prefix docker. Then when all the logs with a prefix docker (so all of them) are send to the elasticsearch container. This had almoust everything we need except we had no idea what exact container the logs were coming from, the only thing added was the long container id string but that was not what we wanted.
-We wanted to have the hostname we originally set when starting the containers 
+We wanted to have the hostname we originally set when starting the containers. The module `fluent-plugin-docker_metadata_filter` did what we wanted so we installed it. But the version on gem repository was not the latest version so we had to install it this way.
+
+```
+git clone https://github.com/fabric8io/fluent-plugin-docker_metadata_filter && \
+      cd fluent-plugin-docker_metadata_filter && \
+      gem build fluent-plugin-docker_metadata_filter.gemspec && \
+      gem install --no-ri --no-rdoc fluent-plugin-docker_metadata_filter
+
+```
+
+After installing the gem all we had to do was adding this to our fluentd config file:
+
+```
+<filter docker.var.lib.docker.containers.*.*.log>
+  type docker_metadata
+</filter>
+
+```
+now we have logs with the added docker metadata for that container.
 
 #### <b> One container to store them all </b>
 
+To store all the logs we went with just a regular elasticsearch container. It stores the logs it gets from fluentd and provides them for querries from kibana
+
 #### <b> One container to show them all </b>
 
+Again nothing special here. Just a regular kibana container and a dns entry for accessing it. The only thing we added here was authentication. There are a lot of complicated ways to do this but we chose just to add authentication to our nginx. But because we are using docker-gen for this as explained in <a href="/internship%20week%202/2016/02/24/dock-gen-and-continuous-integration.html">our previous blog post</a> it got a we had to add authentication to our template. This turned out to be rather simple just by adding the next few lines of code inside the 'location /' block
 
+```
+		{{ if hasPrefix "logging-stage" $host }}
+		auth_basic	"Restricted {{ $host }}";
+		auth_basic_user_file	{{ (printf "/etc/nginx/htpasswd/%s" $host) }};
+		{{ end }}.
+
+```
+
+What this does is check if the 'VIRTUAL_HOST' variable has a prefix logging-stage and if so, add basic authentication to that location block. The password file is premade and can be copied when building the docker image or just add a volume mounting the file on the desired location.
