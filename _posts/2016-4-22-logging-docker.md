@@ -12,7 +12,7 @@ During week 7 & 8 at <a href="www.smalltownheroes.be"><b>Small Town Heroes</b></
 ## <b> One container to log them all</b>
 
 To manage logging Docker has implemented a system that makes use of <b>Logging Drivers</b>.
-By specifying the `--log-driver` in your `docker run` command you container will be configured to use this driver.  
+By specifying the `--log-driver` in your `docker run` command your container will be configured to use this driver.  
 
 Docker provides these drivers for logging:
 <table class="default">
