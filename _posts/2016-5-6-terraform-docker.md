@@ -193,7 +193,7 @@ The contents of this cloud-config file will be provided to the AWS instance as u
 
 Lastly we want to provision our AWS instance with all the necessary files and our custom Docker images. When a resource is initially created, <b>provisioners</b> can be used to intialize that resource. There are many types of provisioners available. We'll use the <b>file provisioner</b> and <b>remote-exec provisioner</b> to provision our remote machine.  
   
-The file provisioner is used to copy files (like the name implies) or entire directories from the machine executing terraform onto the newly created machine. Both SSH and WinRM connection types are supported here. We'll be using the SSH connection to copy our initialization script onto the remote machine.
+The file provisioner is used to copy files or entire directories from the machine executing terraform onto the newly created machine. Both SSH and WinRM connection types are supported here. We'll be using the SSH connection to copy our initialization script onto the remote machine.
 
 <pre>
 <code>provisioner <b style="color:blue">"file"</b> {
