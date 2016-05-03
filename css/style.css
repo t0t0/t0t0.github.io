@@ -1239,7 +1239,7 @@ pre {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  background-color: #FAFAFB;
+  background-color: #f9f9f9;
   color: #393939;
   margin: 0px;
 }
