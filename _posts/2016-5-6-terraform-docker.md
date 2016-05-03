@@ -250,7 +250,7 @@ provider "docker" {
 </pre>
 
 <br />
-We initialize a variable called "aws_ip" that will be filled in by our AWS module. As you look back to our `root.tf` config file, you'll notice that we put our AWS instance IP address into the variable "aws_ip". This is the tricky part to make our separate and dependent modules work together. To explain how we did this, take a look at this bit of code from our terraform config file or AWS.
+We initialize a variable called "aws_ip" that will be filled in by our AWS module. As you look back to our `root.tf` config file, you'll notice that we put our AWS instance IP address into the variable "aws_ip". This is the tricky part to make our separate and dependent modules work together. To explain how we did this, take a look at this bit of code from our terraform config file for AWS.
 
 <pre>
 <code>output "public_ip" {
