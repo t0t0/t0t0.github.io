@@ -11,7 +11,7 @@ To start getting familiar with Docker, we started out with creating a local envi
 We based ourselves on <a href="http://anandmanisankar.com/posts/docker-container-nginx-node-redis-example/">this sample workflow</a>.  
 <!--more-->
 
-## <strong>2. Deploying Docker containers locally</strong>
+## <strong>1. Deploying Docker containers locally</strong>
 
 
 <div style="text-align:center"><img src="/images/DockerSample.png" alt="Sample Image by ANAND MANI SANKAR" style="max-width:100%"/></div> <br />
@@ -59,7 +59,7 @@ The only port that is published by the docker-machine to allow access from the o
 Running the command `docker-compose up` would automatically deploy our containers in order of their dependency.  
 
 
-## <strong> 3. Deploying containers on a remote server</strong>
+## <strong> 2. Deploying containers on a remote server</strong>
 
 The next step was to deploy the Docker containers remotely. This time we would run a NodeJS application, developed by our colleague, on both node containers.  
 This remote server was a **CoreOS VM running on AWS**.
