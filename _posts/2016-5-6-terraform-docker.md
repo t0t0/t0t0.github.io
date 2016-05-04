@@ -37,6 +37,8 @@ resource "aws_eip" "ip" {
 
 ## <b>3. Terraforming Docker & Coreos </b>
 In the case of providers there is, as said before, no similar method to define dependency. That's why we solved this by using a <b>work-around</b>. We divided our providers into two separate <b>modules</b>. In the world of Terraform modules are self-contained packages of configurations that are managed as a group. By isolating each provider into a separate module we're able to first launch our AWS provider and our Docker provider afterwards.  
+
+Launching our infrastructure in the correct order is done by executing the following command: `$ terraform apply -target=module.aws && terraform apply -target=module.docker`
   
 Firstly we'll create a simple `root.tf` file in the root folder of our project. 
 
